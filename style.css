@@ -524,6 +524,90 @@ section {
   padding: 3px 10px;
 }
 
+
+
+.project-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+  align-items: stretch;
+}
+
+.project-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.project-slide > a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-slide .proj {
+  height: 100%;
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.slider-controls button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 22px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.slider-controls button:hover {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+#slideCounter {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--mute);
+}
+
+@media (max-width: 768px) {
+  .project-slide .proj {
+    grid-template-columns: 1fr;
+  }
+
+  .shot {
+    padding: 20px;
+  }
+
+  .pinfo {
+    padding: 24px;
+  }
+
+  .pinfo h3 {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider-track {
+    transition: none;
+  }
+}
+
 /* Tables */
 .tablewrap {
   overflow-x: auto;
